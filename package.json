@@ -13,11 +13,13 @@
   "scripts": {
     "prebuild": "npm install",
     "build": "webpack || echo not ok",
-    "test": "jest",
-    "test:watch": "npm test -- --watch",
-    "coverage": "npm test -- --coverage --no-cache",
-    "coverage:watch": "npm run coverage -- --watch",
-    "prerelease": "npm run build && npm test",
+    "test": "npm run test:watch",
+    "test:once": "jest",
+    "test:watch": "jest --watch",
+    "coverage": "npm run coverage:watch",
+    "coverage:once": "jest --coverage --no-cache",
+    "coverage:watch": "jest --coverage --watch --no-cache",
+    "prerelease": "npm run build && npm run coverage:once",
     "release": "standard-version && npm pack"
   },
   "repository": {
@@ -68,6 +70,7 @@
   },
   "dependencies": {},
   "jest": {
+    "verbose": true,
     "scriptPreprocessor": "node_modules/typescript-babel-jest",
     "testEnvironment": "node",
     "testRegex": ".*\\.spec\\.ts$",
