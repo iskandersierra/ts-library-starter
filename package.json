@@ -42,7 +42,7 @@
     "boilerplate",
     "awesome-typescript-loader"
   ],
-  "author": "Hagai Cohen",
+  "author": "Iskander Sierra",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/iskandersierra/ts-library-starter/issues"
